@@ -1,0 +1,19 @@
+flowchart TD
+    Start([Start]) --> Consent{Synthetic or authorized sanitized evidence?}
+    Consent -- No --> Stop[Do not upload; sanitize / obtain authorization]
+    Consent -- Yes --> Intake[Enter incident metadata and upload/paste evidence]
+    Intake --> Validate{Supported UTF-8 file and size?}
+    Validate -- No --> Error[Show clear validation error]
+    Error --> Intake
+    Validate -- Yes --> Store[Assign evidence IDs and store locally in SQLite]
+    Store --> Analyze[Extract timestamps, indicators, and rule matches]
+    Analyze --> Inspect[Analyst inspects source excerpts, flags, and uncertainty]
+    Inspect --> Draft[Generate evidence-linked draft report]
+    Draft --> Edit[Edit sections and review references]
+    Edit --> Decision{Human decision}
+    Decision -- Needs work --> InReview[Save as In Review / revise]
+    InReview --> Edit
+    Decision -- Reject --> Rejected[Record Rejected]
+    Decision -- Approve --> Approved[Record Approved by named reviewer]
+    Rejected --> Export[Export with current status label]
+    Approved --> Export

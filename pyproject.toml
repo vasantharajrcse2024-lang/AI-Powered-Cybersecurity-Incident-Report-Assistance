@@ -1,0 +1,10 @@
+[project]
+name = "incident-report-assistant"
+version = "1.0.0"
+description = "Local evidence-first cybersecurity incident report assistant for educational use"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-ra"

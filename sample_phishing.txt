@@ -1,0 +1,5 @@
+2026-10-28T09:14:00Z ALERT: User reported suspicious email with subject 'Shared document'.
+2026-10-28T09:19:00Z Mail gateway quarantined message from sender alerts@documents-example.test.
+2026-10-28T09:25:30Z Endpoint telemetry recorded connection attempt to 198.51.100.24 from host=WS-104; connection blocked by policy.
+2026-10-28T09:31:00Z Analyst opened ticket event id: 4625; no confirmed credential submission documented.
+2026-10-28T09:45:00Z Response action: mailbox search initiated; completion status not provided.

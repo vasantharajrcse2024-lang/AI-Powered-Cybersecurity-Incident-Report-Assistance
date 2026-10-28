@@ -1,0 +1,17 @@
+DEMONSTRATION OUTPUT — SYNTHETIC SAMPLE ONLY
+Incident ID: IR-DEMO-001
+Suggested classification: Phishing
+Suggested severity: Medium (rule-based; not confirmed)
+
+Summary: Submitted synthetic evidence contains a user-reported suspicious email, a mail gateway quarantine event, and a blocked connection attempt. No credential submission or confirmed impact is established.
+
+Timeline (UTC):
+2026-10-28T09:14:00Z — User reported suspicious email [E-001]
+2026-10-28T09:19:00Z — Mail gateway quarantined message [E-002]
+2026-10-28T09:25:30Z — Connection attempt blocked by policy from 198.51.100.24 [E-003]
+2026-10-28T09:31:00Z — Analyst ticket event id 4625 [E-004]
+2026-10-28T09:45:00Z — Mailbox search initiated; completion unknown [E-005]
+
+Observed indicators: 198.51.100.24 [E-003]; WS-104 [E-003]; event ID 4625 [E-004]
+Confirmed impact: Not supported by available evidence.
+Review status: Draft — analyst review required.

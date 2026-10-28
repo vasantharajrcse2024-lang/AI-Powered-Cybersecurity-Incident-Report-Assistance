@@ -1,0 +1,16 @@
+flowchart LR
+    Analyst[Authorized analyst] --> UI[Streamlit dashboard]
+    UI --> Intake[File validation and parsing]
+    Intake --> Evidence[(SQLite evidence records)]
+    Evidence --> Timeline[Timestamp normalization]
+    Evidence --> IOC[Regex indicator extraction]
+    Evidence --> Rules[Local rule-based classification]
+    Timeline --> Report[Evidence-linked draft generator]
+    IOC --> Report
+    Rules --> Report
+    Report --> DB[(SQLite reports and reviews)]
+    Analyst --> Review[Edit / In Review / Approve / Reject]
+    Review --> DB
+    DB --> Export[JSON / TXT / PDF export]
+    API[Optional localhost FastAPI] --> DB
+    External[External AI / network IOC lookup] -. disabled by default .-> Rules
